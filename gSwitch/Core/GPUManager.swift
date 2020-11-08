@@ -13,10 +13,10 @@
 
 import Foundation
 import IOKit
-import SwiftyBeaver
+//eaj import SwiftyBeaver
 
 class GPUManager {
-    private let log = SwiftyBeaver.self
+    //eaj private let log = SwiftyBeaver.self
     
     public var integratedName: String?
     public var discreteName: String?
@@ -55,14 +55,13 @@ class GPUManager {
             }
         }
         
-        log.verbose("Integrated: \(integratedName ?? "Unknown")")
-        log.verbose("Discrete: \(discreteName ?? "Unknown")")
-        
+        NSLog("verbose: %@","Integrated: \(integratedName ?? "Unknown")") //eaj log.verbose("Integrated: \(integratedName ?? "Unknown")")
+        NSLog("verbose: %@","Discrete: \(discreteName ?? "Unknown")") //eaj log.verbose("Discrete: \(discreteName ?? "Unknown")")
         if  self.discreteName == nil ||
             self.integratedName == nil ||
             self.discreteName == "Unknown" ||
             self.integratedName == "Unknown" {
-                log.error("There was an error finding the gpus.. \(gpus.description)")
+                NSLog("error: %@","There was an error finding the gpus.. \(gpus.description)") //eaj log.error("There was an error finding the gpus.. \(gpus.description)")
         }
     }
     
@@ -94,7 +93,7 @@ class GPUManager {
             throw RuntimeError.CanNotConnect("IOConnectCallScalarMethod returned \(kernResult)")
         }
         
-        log.info("Successfully connected")
+        NSLog("info: %@","Successfully connected") //eaj log.info("Successfully connected")
     }
     
     public func close() -> Bool {
@@ -105,19 +104,18 @@ class GPUManager {
         
         kernResult = IOConnectCallScalarMethod(self._connect, UInt32(DispatchSelectors.kClose.rawValue), nil, 0, nil, nil);
         if kernResult != KERN_SUCCESS {
-            log.error("IOConnectCallScalarMethod returned \(kernResult)")
+            NSLog("error: %@","IOConnectCallScalarMethod returned \(kernResult)") //eaj log.error("IOConnectCallScalarMethod returned \(kernResult)")
             return false
         }
         
         kernResult = IOServiceClose(self._connect);
         if kernResult != KERN_SUCCESS {
-            log.error("IOServiceClose returned \(kernResult)")
+            NSLog("error: %@","IOServiceClose returned \(kernResult)") //eaj log.error("IOServiceClose returned \(kernResult)")
             return false
         }
         
         self._connect = IO_OBJECT_NULL
-        log.info("Driver Connection Closed")
-        
+        NSLog("info: %@","Driver Connection Closed") //eaj log.info("Driver Connection Closed")
         return true
     }
     
@@ -138,15 +136,13 @@ class GPUManager {
         switch mode {
         case .ForceIntergrated:
             let integrated = CheckGPUStateAndisUsingIntegratedGPU()
-            log.info("Requesting integrated, are we integrated?  \(integrated)")
-            
+            NSLog("info: %@","Requesting integrated, are we integrated?  \(integrated)") //eaj log.info("Requesting integrated, are we integrated?  \(integrated)")
             if !integrated {
                 status = SwitchGPU(connect: connect)
             }
             
         case .ForceDiscrete:
-            log.info("Requesting discrete")
-            
+            NSLog("info: %@","Requesting discrete") //eaj log.info("Requesting discrete")
             /** Essientialy ticks and unticks the box in system prefs, which by design forces discrete */
             
             _ = setFeatureInfo(connect: connect, feature: Features.Policy, enabled: true)
@@ -159,8 +155,7 @@ class GPUManager {
             
             status = setDynamicSwitching(connect: connect, enabled: false)
         case .SetDynamic:
-            log.info("Requesting Dynamic")
-            
+            NSLog("info: %@","Requesting Dynamic") //eaj log.info("Requesting Dynamic")
             /** Set switch policy back, makes it think its on auto switching */
             _ = setFeatureInfo(connect: connect, feature: Features.Policy, enabled: true)
             _ = setSwitchPolicy(connect: connect)
@@ -188,15 +183,14 @@ class GPUManager {
     */
     public func CheckGPUStateAndisUsingIntegratedGPU() -> Bool {
         if self._connect == IO_OBJECT_NULL {
-            log.error("Lost connection to gpu")
+            NSLog("error: %@","Lost connection to gpu") //eaj log.error("Lost connection to gpu")
             return false  //probably need to throw or exit if lost connection?
         }
         
         let gpu_int = GPU_INT(rawValue: Int(getGPUState(connect: self._connect, input: GPUState.GraphicsCard)))
         
         NotificationCenter.default.post(name: .checkGPUState, object: gpu_int)
-        log.info("NOTIFY: checkGPUState ~ Checking GPU...")
-        
+        NSLog("info: %@","NOTIFY: checkGPUState ~ Checking GPU...") //eaj log.info("NOTIFY: checkGPUState ~ Checking GPU...")
         if gpu_int == .Integrated {
             currentGPU = self.integratedName
         } else {
@@ -236,9 +230,9 @@ class GPUManager {
         );
 
         if kernResult == KERN_SUCCESS {
-            log.verbose("SET: Modified state with \(state)")
+            NSLog("verbose: %@","SET: Modified state with \(state)") //eaj log.verbose("SET: Modified state with \(state)")
         } else {
-            log.error("Set state returned \(kernResult)")
+            NSLog("error: %@","Set state returned \(kernResult)") //eaj log.error("Set state returned \(kernResult)")
         }
             
         return kernResult == KERN_SUCCESS
@@ -282,9 +276,9 @@ class GPUManager {
         }
         
         if kernResult == KERN_SUCCESS {
-            log.verbose(successMessage)
+            NSLog("verbose: %@",successMessage) //eaj log.verbose(successMessage)
         } else {
-            log.error("Get state returned \(kernResult)")
+            NSLog("error: %@","Get state returned \(kernResult)") //eaj log.error("Get state returned \(kernResult)")
         }
         
         return output
@@ -335,9 +329,9 @@ class GPUManager {
             &structSize)
         
         if kernResult == KERN_SUCCESS {
-            log.info("Dumped state")
+            NSLog("info: %@","Dumped state") //eaj log.info("Dumped state")
         } else {
-            log.error("Did not dump state")
+            NSLog("error: %@","Did not dump state") //eaj log.error("Did not dump state")
         }
         
         return stateStruct

@@ -8,10 +8,10 @@
 
 import Cocoa
 import Foundation
-import SwiftyBeaver
+// import SwiftyBeaver
 
 class BossyWindow: NSWindowController {
-    internal let log = SwiftyBeaver.self
+    // internal let log = SwiftyBeaver.self
     internal let appDelegate = (NSApplication.shared.delegate as! AppDelegate)
     
     public func pushToFront() {

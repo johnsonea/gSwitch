@@ -36,21 +36,21 @@ class AdvancedWindow: BossyWindow {
         setGPUStateState.formatter = numberOnlyFormatter
         setGPUStateArg.formatter = numberOnlyFormatter
         
-        log.info("Advanced was opened")
+        NSLog("info: %@","Advanced was opened") //eaj log.info("Advanced was opened")
     }
     
     @IBAction func unsafeIntegratedOnlyClicked(_ sender: NSButton) {
-        log.info("Unsafe Integrated Only clicked")
+        NSLog("info: %@","Unsafe Integrated Only clicked") //eaj log.info("Unsafe Integrated Only clicked")
         appDelegate.unsafeIntegratedOnly()
     }
     
     @IBAction func unsafeDiscreteOnlyClicked(_ sender: NSButton) {
-        log.info("Unsafe Discrete Only clicked")
+        NSLog("info: %@","Unsafe Discrete Only clicked") //eaj log.info("Unsafe Discrete Only clicked")
         appDelegate.unsafeDiscreteOnly()
     }
     
     @IBAction func unsafeDynamicSwitchingClicked(_ sender: NSButton) {
-        log.info("Unsafe Dynamic Switching clicked")
+        NSLog("info: %@","Unsafe Dynamic Switching clicked") //eaj log.info("Unsafe Dynamic Switching clicked")
         appDelegate.unsafeDynamicSwitching()
     }
     

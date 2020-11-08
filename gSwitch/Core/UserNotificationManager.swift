@@ -8,10 +8,10 @@
 
 import Foundation
 import Cocoa
-import SwiftyBeaver
+//eaj import SwiftyBeaver
 
 class UserNotificationManager : NSObject, NSUserNotificationCenterDelegate {
-    private let log = SwiftyBeaver.self
+    //eaj private let log = SwiftyBeaver.self
     
     private let notificationCenter = NSUserNotificationCenter.default
     
@@ -47,7 +47,7 @@ class UserNotificationManager : NSObject, NSUserNotificationCenterDelegate {
         DispatchQueue.main.async {
             sleep(3)
             
-            self.log.info("Showing external display notification")
+            NSLog("info: Showing external display notification") //eaj self.log.info("Showing external display notification")
             
             let notification = NSUserNotification()
             notification.title = "External Display Connected"
@@ -64,7 +64,7 @@ class UserNotificationManager : NSObject, NSUserNotificationCenterDelegate {
             return
         }
         
-        log.info("Showing GPU Change Notification")
+        NSLog("info: Showing GPU Change Notification") //eaj log.info("Showing GPU Change Notification")
         
         let notification = NSUserNotification()
         notification.title = "GPU Changed"
@@ -76,7 +76,7 @@ class UserNotificationManager : NSObject, NSUserNotificationCenterDelegate {
     }
     
     public func cleanUp() {
-        log.info("CLEAN: Notifications are gross")
+        NSLog("info: CLEAN: Notifications are gross") //eaj log.info("CLEAN: Notifications are gross")
         notificationCenter.removeAllDeliveredNotifications()
         isGoingToCleanNotifications = false
     }
@@ -99,7 +99,7 @@ class UserNotificationManager : NSObject, NSUserNotificationCenterDelegate {
     
     private func checkIfMaidOnTheWay() {
         if !isGoingToCleanNotifications {
-            log.info("Called the maid")
+            NSLog("info: Called the maid") //eaj log.info("Called the maid")
             
             DispatchQueue.main.async {
                 /** Removes notifications in approx 5 mins */

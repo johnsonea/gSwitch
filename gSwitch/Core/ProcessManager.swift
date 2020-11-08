@@ -9,7 +9,7 @@
 import Foundation
 import AppKit
 import IOKit
-import SwiftyBeaver
+//eaj import SwiftyBeaver
 
 struct Process {
     var pid : String
@@ -22,7 +22,7 @@ struct Process {
 }
 
 class ProcessManager {
-    private let log = SwiftyBeaver.self
+    //eaj private let log = SwiftyBeaver.self
     
     /**
         At this time not doing any polling but its possible.
@@ -55,7 +55,7 @@ class ProcessManager {
         let hungry = self.getHungryProcesses()
         
         NotificationCenter.default.post(name: .updateProcessListInMenu, object: hungry)
-        log.info("UPDATE: Polling for hungry processes")
+        NSLog("info: UPDATE: Polling for hungry processes") //eaj log.info("UPDATE: Polling for hungry processes")
     }
     
     @objc private func _updateProcessMenuList(notification: NSNotification) {
@@ -66,7 +66,7 @@ class ProcessManager {
     @objc private func startPoll(notification: NSNotification) {
         DispatchQueue.main.async {
             if self.pollTimer == nil {
-                self.log.info("Starting Poll")
+                NSLog("info: Starting Poll") //eaj self.log.info("Starting Poll")
                 self.pollTimer =  Timer.scheduledTimer(
                     timeInterval: 2,
                     target      : self,
@@ -81,7 +81,7 @@ class ProcessManager {
     @objc private func stopPoll(notification: NSNotification) {
         DispatchQueue.main.async {
             if self.pollTimer != nil {
-                self.log.info("Stopping Poll")
+                NSLog("info: Stopping Poll") //eaj self.log.info("Stopping Poll")
                 self.pollTimer?.invalidate()
                 self.pollTimer = nil
             }

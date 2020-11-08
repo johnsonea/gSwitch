@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import Sparkle
+//eaj import Sparkle
 
-class UpdaterDelegate : NSObject, SPUUpdaterDelegate {
+class UpdaterDelegate : NSObject { //eaj class UpdaterDelegate : NSObject, SPUUpdaterDelegate {
     // If i need the delegate
 }

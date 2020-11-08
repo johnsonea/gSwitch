@@ -9,10 +9,10 @@
 
 import Foundation
 import CoreGraphics
-import SwiftyBeaver
+//eaj import SwiftyBeaver
 
 class GPUListener {
-    private let log = SwiftyBeaver.self
+    // private let log = SwiftyBeaver.self
     
     private var notificationQueue: DispatchQueue?
     private var _manager: GPUManager?
@@ -26,7 +26,7 @@ class GPUListener {
         self._manager = manager
         self._processor = processor
         displayCallback()
-        log.info("Listening")
+        NSLog("info: Listening") //eaj log.info("Listening")
     }
     
     private func displayCallback() {
@@ -35,12 +35,12 @@ class GPUListener {
             
             let this = unsafeBitCast(data, to: GPUListener.self)
             
-            this.log.info("NOTIFY: checkForHungryProcesses ~ for menu update")
+            NSLog("info: NOTIFY: checkForHungryProcesses ~ for menu update") //eaj this.log.info("NOTIFY: checkForHungryProcesses ~ for menu update")
             NotificationCenter.default.post(name: .checkForHungryProcesses, object: nil)
         
             if(this._manager!.CheckGPUStateAndisUsingIntegratedGPU() && this._manager!.requestedMode == SwitcherMode.ForceIntergrated) {
                 // calls .checkGPUState
-                this.log.info("Switched from desired integrated to discrete")
+                NSLog("info: Switched from desired integrated to discrete") //eaj this.log.info("Switched from desired integrated to discrete")
             }
             
             
@@ -50,7 +50,7 @@ class GPUListener {
                     If a user is on integrated only this forces it back from discrete.
                  */
                 
-                this.log.info("Dedicated Graphics Card Called")
+                NSLog("info: Dedicated Graphics Card Called") //eaj this.log.info("Dedicated Graphics Card Called")
                 _ = this._processor?.getHungryProcesses()
 
                 this.notificationQueue?.async(execute: {
@@ -64,11 +64,11 @@ class GPUListener {
 
                     if(!isUsingIntegrated && requestedMode == SwitcherMode.ForceIntergrated) {
                         if(this._manager!.GPUMode(mode: .ForceIntergrated)) {
-                            this.log.info("Forced integrated GPU From dedicated GPU")
+                            NSLog("info: Forced integrated GPU From dedicated GPU") //eaj this.log.info("Forced integrated GPU From dedicated GPU")
                         }
                     } else {
                         // usually gets called when change but sometimes gets called when no change?
-                        this.log.verbose("NOTIFY: GPU maybe Changed")
+                        NSLog("info: NOTIFY: GPU maybe Changed") //eaj this.log.verbose("NOTIFY: GPU maybe Changed")
                         NotificationCenter.default.post(name: .probableGPUChange, object: this._manager?.currentGPU)
                     }
                 })

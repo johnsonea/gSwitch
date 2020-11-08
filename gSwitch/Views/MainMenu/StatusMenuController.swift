@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-import SwiftyBeaver
+//eaj import SwiftyBeaver
 
 class StatusMenuController: NSViewController {
     @IBOutlet weak var statusMenu: NSMenu!
@@ -29,7 +29,7 @@ class StatusMenuController: NSViewController {
     private var preferencesWindow: PreferencesWindow!
     private var aboutWindow: AboutWindow!
     
-    private let log = SwiftyBeaver.self
+    //eaj private let log = SwiftyBeaver.self
     
     private var modeWasForcedFromDisplay = false;
     
@@ -60,7 +60,7 @@ class StatusMenuController: NSViewController {
     
     @IBAction func helpClicked(_ sender: NSMenuItem) {
         if let url = URL(string: Constants.HELP_URL), NSWorkspace.shared.open(url) {
-            log.info("Opened help")
+            NSLog("info: %@","Opened help") //eaj log.info("Opened help")
         }
     }
     
@@ -130,12 +130,12 @@ class StatusMenuController: NSViewController {
         // this function always gets called from a non-main thread
         DispatchQueue.main.async {
             guard let gpu = notification.object as? GPU_INT else {
-                self.log.warning("Failed to convert to GPU object")
+                NSLog("warning: %@","Failed to convert to GPU object") //eaj self.log.warning("Failed to convert to GPU object")
                 return
             }
             
             guard let currentGPU = self.appDelegate?.manager.resolveGPUName(gpu: gpu) else {
-                self.log.warning("Can't change gpu name in menu, Current GPU Unknown")
+                NSLog("warning: %@","Can't change gpu name in menu, Current GPU Unknown") //eaj self.log.warning("Can't change gpu name in menu, Current GPU Unknown")
                 return
             }
             
@@ -149,7 +149,7 @@ class StatusMenuController: NSViewController {
     
     @objc private func updateProcessList(notification: NSNotification) {
         guard var hungry = notification.object as? [Process] else {
-            log.warning("Could not update process list, invalid object received")
+            NSLog("warning: %@","Could not update process list, invalid object received") //eaj log.warning("Could not update process list, invalid object received")
             return
         }
         
@@ -161,7 +161,7 @@ class StatusMenuController: NSViewController {
         }
         
         if(modeWasForcedFromDisplay) {
-            log.warning("Mode was forced from external display.  Going back to integrated only when the display is disconnected")
+            NSLog("warning: %@","Mode was forced from external display.  Going back to integrated only when the display is disconnected") //eaj log.warning("Mode was forced from external display.  Going back to integrated only when the display is disconnected")
         }
         
         var isDisplayConnected = false;
@@ -172,8 +172,7 @@ class StatusMenuController: NSViewController {
                 
                 if appDelegate?.manager.requestedMode == SwitcherMode.ForceIntergrated {
                     if (appDelegate?.manager.GPUMode(mode: SwitcherMode.SetDynamic))! {
-                        log.warning("External display connected, going back to dynamic")
-                        
+                        NSLog("warning: %@","External display connected, going back to dynamic") //eaj log.warning("External display connected, going back to dynamic")
                         modeWasForcedFromDisplay = true;
                         
                         NotificationCenter.default.post(name: .externalDisplayConnect, object: nil)

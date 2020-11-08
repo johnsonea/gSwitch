@@ -16,7 +16,7 @@ class AboutWindow: BossyWindow {
     override func windowDidLoad() {
         super.windowDidLoad()
 
-        log.info("About Opened")
+        NSLog("About Opened") //eaj log.info("About Opened")
         
         aboutText.stringValue = "gSwitch \(version)"
         

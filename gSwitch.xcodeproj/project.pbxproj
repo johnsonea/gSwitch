@@ -19,23 +19,13 @@
 		82233ED720844ADF006C57E7 /* GPUListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82233ED020844ADF006C57E7 /* GPUListener.swift */; };
 		82233ED820844ADF006C57E7 /* ProcessManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82233ED120844ADF006C57E7 /* ProcessManager.swift */; };
 		82360C722088361700ADD0CE /* PreferencesWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82360C702088361700ADD0CE /* PreferencesWindow.swift */; };
-		823960BE228949BC0014D7CD /* LaunchAtLogin.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 823960BD228949BC0014D7CD /* LaunchAtLogin.framework.dSYM */; };
-		823960D122894B820014D7CD /* LaunchAtLogin.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 823960D022894B820014D7CD /* LaunchAtLogin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		823B274E208C0A2900A7DFB6 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 823B274D208C0A2900A7DFB6 /* dsa_pub.pem */; };
 		82556518208C505900A6807F /* UpdaterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82556517208C505900A6807F /* UpdaterDelegate.swift */; };
-		82556532208C5B9300A6807F /* Sparkle.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 82556530208C5B9300A6807F /* Sparkle.framework.dSYM */; };
-		82556533208C5BA900A6807F /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8255652F208C5B9300A6807F /* Sparkle.framework */; };
-		82556534208C5BA900A6807F /* Sparkle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8255652F208C5B9300A6807F /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		82556535208C5BB200A6807F /* Sparkle.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82556530208C5B9300A6807F /* Sparkle.framework.dSYM */; };
 		828D681220C897D200A41DD9 /* AdvancedWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D681020C897D200A41DD9 /* AdvancedWindow.swift */; };
 		828D681320C897D200A41DD9 /* AdvancedWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 828D681120C897D200A41DD9 /* AdvancedWindow.xib */; };
 		828D681820C8BCFF00A41DD9 /* HelpWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D681620C8BCFF00A41DD9 /* HelpWindow.swift */; };
 		828D681920C8BCFF00A41DD9 /* HelpWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 828D681720C8BCFF00A41DD9 /* HelpWindow.xib */; };
 		829553C720884BFA00A29C49 /* AboutWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829553C520884BFA00A29C49 /* AboutWindow.swift */; };
-		829553CB20884F4700A29C49 /* SwiftyBeaver.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 829553C920884F4700A29C49 /* SwiftyBeaver.framework.dSYM */; };
-		829553CD20884F5400A29C49 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 829553CA20884F4700A29C49 /* SwiftyBeaver.framework */; };
-		829553CE20884F5400A29C49 /* SwiftyBeaver.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 829553CA20884F4700A29C49 /* SwiftyBeaver.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		829553D020884F6200A29C49 /* SwiftyBeaver.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 829553C920884F4700A29C49 /* SwiftyBeaver.framework.dSYM */; };
 		829553D220884FC200A29C49 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829553D120884FC200A29C49 /* Extentions.swift */; };
 		82AD4BE92087F335003375C1 /* GPUView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AD4BE82087F335003375C1 /* GPUView.swift */; };
 		82C7028120859AB600EB6B85 /* UserNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C7028020859AB600EB6B85 /* UserNotificationManager.swift */; };
@@ -77,8 +67,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
-				82556535208C5BB200A6807F /* Sparkle.framework.dSYM in CopyFiles */,
-				829553D020884F6200A29C49 /* SwiftyBeaver.framework.dSYM in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,9 +76,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				823960D122894B820014D7CD /* LaunchAtLogin.framework in Embed Frameworks */,
-				829553CE20884F5400A29C49 /* SwiftyBeaver.framework in Embed Frameworks */,
-				82556534208C5BA900A6807F /* Sparkle.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -128,19 +113,13 @@
 		82233ED020844ADF006C57E7 /* GPUListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPUListener.swift; sourceTree = "<group>"; };
 		82233ED120844ADF006C57E7 /* ProcessManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessManager.swift; sourceTree = "<group>"; };
 		82360C702088361700ADD0CE /* PreferencesWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindow.swift; sourceTree = "<group>"; };
-		823960BD228949BC0014D7CD /* LaunchAtLogin.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = LaunchAtLogin.framework.dSYM; path = Carthage/Build/Mac/LaunchAtLogin.framework.dSYM; sourceTree = "<group>"; };
-		823960D022894B820014D7CD /* LaunchAtLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LaunchAtLogin.framework; path = Carthage/Build/Mac/LaunchAtLogin.framework; sourceTree = "<group>"; };
 		823B274D208C0A2900A7DFB6 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		82556517208C505900A6807F /* UpdaterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdaterDelegate.swift; sourceTree = "<group>"; };
-		8255652F208C5B9300A6807F /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Carthage/Build/Mac/Sparkle.framework; sourceTree = "<group>"; };
-		82556530208C5B9300A6807F /* Sparkle.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Sparkle.framework.dSYM; path = Carthage/Build/Mac/Sparkle.framework.dSYM; sourceTree = "<group>"; };
 		828D681020C897D200A41DD9 /* AdvancedWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedWindow.swift; sourceTree = "<group>"; };
 		828D681120C897D200A41DD9 /* AdvancedWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdvancedWindow.xib; sourceTree = "<group>"; };
 		828D681620C8BCFF00A41DD9 /* HelpWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpWindow.swift; sourceTree = "<group>"; };
 		828D681720C8BCFF00A41DD9 /* HelpWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelpWindow.xib; sourceTree = "<group>"; };
 		829553C520884BFA00A29C49 /* AboutWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutWindow.swift; sourceTree = "<group>"; };
-		829553C920884F4700A29C49 /* SwiftyBeaver.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwiftyBeaver.framework.dSYM; path = Carthage/Build/Mac/SwiftyBeaver.framework.dSYM; sourceTree = "<group>"; };
-		829553CA20884F4700A29C49 /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = Carthage/Build/Mac/SwiftyBeaver.framework; sourceTree = "<group>"; };
 		829553D120884FC200A29C49 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		82AD4BE82087F335003375C1 /* GPUView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPUView.swift; sourceTree = "<group>"; };
 		82C7028020859AB600EB6B85 /* UserNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationManager.swift; sourceTree = "<group>"; };
@@ -169,8 +148,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82556533208C5BA900A6807F /* Sparkle.framework in Frameworks */,
-				829553CD20884F5400A29C49 /* SwiftyBeaver.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,12 +308,6 @@
 		8230418820882BB1006701CB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				823960D022894B820014D7CD /* LaunchAtLogin.framework */,
-				823960BD228949BC0014D7CD /* LaunchAtLogin.framework.dSYM */,
-				8255652F208C5B9300A6807F /* Sparkle.framework */,
-				82556530208C5B9300A6807F /* Sparkle.framework.dSYM */,
-				829553CA20884F4700A29C49 /* SwiftyBeaver.framework */,
-				829553C920884F4700A29C49 /* SwiftyBeaver.framework.dSYM */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -465,7 +436,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				823960BE228949BC0014D7CD /* LaunchAtLogin.framework.dSYM in Resources */,
 				823B274E208C0A2900A7DFB6 /* dsa_pub.pem in Resources */,
 				828D681320C897D200A41DD9 /* AdvancedWindow.xib in Resources */,
 				828D681920C8BCFF00A41DD9 /* HelpWindow.xib in Resources */,
@@ -473,8 +443,6 @@
 				AA20D30820EC2D6B009862FB /* PreferencesWindow.xib in Resources */,
 				82233EA620844ACA006C57E7 /* MainMenu.xib in Resources */,
 				AAC7195520E2D04E009862FB /* AboutWindow.xib in Resources */,
-				82556532208C5B9300A6807F /* Sparkle.framework.dSYM in Resources */,
-				829553CB20884F4700A29C49 /* SwiftyBeaver.framework.dSYM in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,7 +478,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PROJECT_DIR}/Carthage/Build/Mac/LaunchAtLogin.framework/Resources/copy-helper.sh\"\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#eaj \"${PROJECT_DIR}/Carthage/Build/Mac/LaunchAtLogin.framework/Resources/copy-helper.sh\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -735,11 +703,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = gSwitch/gSwitch.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1.9.7;
-				DEVELOPMENT_TEAM = Z26D67C784;
+				CURRENT_PROJECT_VERSION = 1.9.7eaj;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -752,9 +720,10 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 1.9.7;
-				PRODUCT_BUNDLE_IDENTIFIER = com.CodySchrank.gSwitch;
+				MARKETING_VERSION = 1.9.7eaj;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.CodySchrank.gSwitch-eaj";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "gSwitch/gSwitch-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -767,11 +736,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = gSwitch/gSwitch.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1.9.7;
-				DEVELOPMENT_TEAM = Z26D67C784;
+				CURRENT_PROJECT_VERSION = 1.9.7eaj;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -784,9 +753,10 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 1.9.7;
-				PRODUCT_BUNDLE_IDENTIFIER = com.CodySchrank.gSwitch;
+				MARKETING_VERSION = 1.9.7eaj;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.CodySchrank.gSwitch-eaj";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "gSwitch/gSwitch-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
